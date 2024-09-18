@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD Singapore</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+.krub-extralight {
+  font-family: "Krub", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.krub-light {
+  font-family: "Krub", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.krub-regular {
+  font-family: "Krub", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.krub-medium {
+  font-family: "Krub", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.krub-semibold {
+  font-family: "Krub", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.krub-bold {
+  font-family: "Krub", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.krub-extralight-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.krub-light-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.krub-regular-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.krub-medium-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.krub-semibold-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.krub-bold-italic {
+  font-family: "Krub", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+header {
+    background: #000000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+img.logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+nav {
+    background: url('images/black.png') repeat-x;
+    border: 0px solid black;
+    width: 100%;
+    position: fixed;
+    top: 60px; /* Adjusted for header height */
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    font: krub-semibold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #00000079;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown a {
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background: #141414;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    animation: backgroundChange 30s infinite;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 4em; /* Increased font size for the title */
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes backgroundChange {
+    0% { background-image: url('images/imagea1.JPG'); opacity: 1; }
+    10% { background-image: url('images/imagea2.JPG'); opacity: 1; }
+    20% { background-image: url('images/imagea3.JPG'); opacity: 1; }
+    30% { background-image: url('images/imagea4.JPG'); opacity: 1; }
+    40% { background-image: url('images/imagea5.JPG'); opacity: 1; }
+    50% { background-image: url('images/imagea6.JPG'); opacity: 1; }
+    60% { background-image: url('images/imagea7.JPG'); opacity: 1; }
+    70% { background-image: url('images/imagea8.JPG'); opacity: 1; }
+    80% { background-image: url('images/imagea9.JPG'); opacity: 1; }
+    90% { background-image: url('images/groupotd.JPG'); opacity: 1; }
+    100% { background-image: url('images/indexbackground.JPG'); opacity: 1; }
+}
+
+.section {
+    padding: 100px 20px; /* Increased padding for larger sections */
+    text-align: center;
+}
+
+.alumni {
+    background-color: #000000;
+    border-bottom: 1px solid #000000;
+    padding: 100px 20px; /* Increased padding for larger sections */
+    position: relative;
+}
+
+.alumni h2 {
+    margin: 0 0 20px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.alumni-cards {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.alumni-card {
+    flex: 0 0 auto;
+    width: 200px; /* Set the width for the card */
+    background-color: #7d7d7d;
+    border: 1px solid #3f3f3f;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s;
+}
+
+.alumni-card:hover {
+    transform: scale(1.05);
+}
+
+.alumni-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.alumni-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+.alumni-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.arrow-circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: rgb(255, 255, 255);
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow-circle.left {
+    left: 10px;
+}
+
+.arrow-circle.right {
+    right: 10px;
+}
+
+.contact, .socials {
+    background-color: #000000;
+    border-bottom: 1px solid #000000;
+    padding: 100px 20px; /* Increased padding for larger sections */
+    margin: 40px 0; /* Increased margin for spacing */
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #fff;
+}
+
+.nav {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Adjusted font size for smaller screens */
+    }
+
+    .alumni-card {
+        width: 150px; /* Smaller card width for mobile */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="navagationbar">
+        <nav>
+            <ul>
+                <li><img src="images/court-removebg.png" alt="Logo" class="logo" onclick="window.location.href='index.html';"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li>
+                    <a href="roster.html">Members</a>
+                    <div class="dropdown">
+                        <a href="#">Players</a>
+                        <a href="#">Coaching Staff</a>
+                        <a href="#">Roster</a>
+                    </div>
+                </li>
+                <li><a href="sponsors.html">Try Out</a></li>
+                <li><a href="links.html">Camps/Clinic</a></li>
+                <li><a href="links.html">USA Summer Tour</a></li>
+                <li><a href="links.html">College Contacts</a></li>
+                <li><a href="links.html">Merch Store</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hero">
+        <h1>#WEALLWEGOT</h1>
+    </div>
+
+    <div class="section alumni">
+        <h2>Alumni Basketball Players</h2>
+        <div class="arrow-circle left">&#9664;</div>
+        <div class="alumni-cards">
+            <a href="player1.html" class="alumni-card">
+                <img src="images/player1.jpg" alt="Player 1">
+                <h3>Player 1</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player2.html" class="alumni-card">
+                <img src="images/player2.jpg" alt="Player 2">
+                <h3>Player 2</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player3.html" class="alumni-card">
+                <img src="images/player3.jpg" alt="Player 3">
+                <h3>Player 3</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player4.html" class="alumni-card">
+                <img src="images/player4.jpg" alt="Player 4">
+                <h3>Player 4</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player5.html" class="alumni-card">
+                <img src="images/player5.jpg" alt="Player 5">
+                <h3>Player 5</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player6.html" class="alumni-card">
+                <img src="images/player6.jpg" alt="Player 6">
+                <h3>Player 6</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player7.html" class="alumni-card">
+                <img src="images/player7.jpg" alt="Player 7">
+                <h3>Player 7</h3>
+                <p>Short Bio</p>
+            </a>
+            <a href="player8.html" class="alumni-card">
+                <img src="images/player8.jpg" alt="Player 8">
+                <h3>Player 8</h3>
+                <p>Short Bio</p>
+            </a>
+        </div>
+        <div class="arrow-circle right">&#9654;</div>
+    </div>
+
+    <div class="section contact">
+        <h2>Contact Us to Try Out</h2>
+        <p>Get in touch to join the team or find out more about tryouts. We're always looking for new talent!</p>
+    </div>
+
+    <div class="section socials">
+        <h2>Follow Us</h2>
+        <p><a href="https://www.facebook.com/otdsingapore" target="_blank">Facebook</a></p>
+        <p><a href="https://twitter.com/otdsingapore" target="_blank">Twitter</a></p>
+        <p><a href="https://www.instagram.com/otdsingapore" target="_blank">Instagram</a></p>
+    </div>
+
+    <footer>
+        &copy; 2024 OTD Singapore Basketball Club. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript for arrow functionality
+        document.querySelector('.arrow-circle.left').addEventListener('click', function() {
+            document.querySelector('.alumni-cards').scrollBy({ left: -200, behavior: 'smooth' });
+        });
+
+        document.querySelector('.arrow-circle.right').addEventListener('click', function() {
+            document.querySelector('.alumni-cards').scrollBy({ left: 200, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
